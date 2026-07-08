@@ -24,6 +24,7 @@ const PROJECTS = [
   {
     title: 'Javaline',
     description: 'SaaS de gestión empresarial con 13 módulos: Facturación, CRM, RRHH, Compras, Agenda, Reuniones, Ventas Online, Tareas y Seguridad con perfiles.',
+    image: '/images/javaline.webp',
     tags: ['React', 'Tailwind', 'React Router'],
     gradient: 'from-teal-500/10 to-cyan-500/10',
     iconColor: 'text-teal-400',
@@ -32,6 +33,7 @@ const PROJECTS = [
   {
     title: 'Uno Tax Service',
     description: 'Sitio web corporativo con WordPress para firma de impuestos y contabilidad. Panel administrable, formularios de contacto y diseño responsivo.',
+    image: '/images/unotax.webp',
     tags: ['WordPress', 'Elementor', 'PHP'],
     gradient: 'from-cyan-500/10 to-emerald-500/10',
     iconColor: 'text-cyan-400',
@@ -40,6 +42,7 @@ const PROJECTS = [
   {
     title: 'ClinicFam App',
     description: 'Plataforma de gestión clínica familiar con autenticación, historial médico y módulo de citas.',
+    image: null,
     tags: ['Flutter', 'Firebase', 'Dart'],
     gradient: 'from-emerald-500/10 to-teal-500/10',
     iconColor: 'text-emerald-400',
@@ -658,10 +661,14 @@ function Projects() {
               className="group relative aqua-border rounded-2xl overflow-hidden"
             >
               <div className="crystal-glass-hover relative">
-                <div className={`h-44 bg-gradient-to-br ${project.gradient} flex items-center justify-center`}>
-                  <div className="relative w-16 h-16 crystal-glass rounded-2xl flex items-center justify-center border border-white/[0.06]">
-                    <FiCode size={28} className={`${project.iconColor} group-hover:text-white/90 transition-colors`} />
-                  </div>
+                <div className={`h-44 ${project.image ? '' : 'bg-gradient-to-br ' + project.gradient} flex items-center justify-center overflow-hidden`}>
+                  {project.image ? (
+                    <img src={project.image} alt={project.title} className="w-full h-full object-cover object-top transition-transform duration-500 group-hover:scale-105" />
+                  ) : (
+                    <div className="relative w-16 h-16 crystal-glass rounded-2xl flex items-center justify-center border border-white/[0.06]">
+                      <FiCode size={28} className={`${project.iconColor} group-hover:text-white/90 transition-colors`} />
+                    </div>
+                  )}
                 </div>
                 <div className="p-6">
                   <div className="flex items-start justify-between mb-2">
