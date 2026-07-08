@@ -14,6 +14,7 @@ import { SiWordpress, SiWhatsapp } from 'react-icons/si'
 const NAV_ITEMS = [
   { label: 'Inicio', href: '#hero', icon: FiUser },
   { label: 'Sobre mí', href: '#about', icon: FiUser },
+  { label: 'Proceso', href: '#process', icon: FiCode },
   { label: 'Precios', href: '#pricing', icon: FiDollarSign },
   { label: 'Proyectos', href: '#projects', icon: FiBriefcase },
   { label: 'Habilidades', href: '#skills', icon: FiCode },
@@ -64,6 +65,15 @@ const SOCIAL_LINKS = [
   { icon: FiGithub, href: 'https://github.com/Max-Prencio', label: 'GitHub' },
   { icon: SiWhatsapp, href: 'https://wa.me/18294567685', label: 'WhatsApp' },
   { icon: FiMail, href: 'mailto:maxwelgdsng@gmail.com', label: 'Email' },
+]
+
+const TECHS = [
+  { name: 'React', icon: FiCode, color: '#2dd4bf', desc: 'Web apps rápidas, modernas y escalables.' },
+  { name: 'Node.js', icon: FiServer, color: '#34d399', desc: 'Backend potente y APIs a medida.' },
+  { name: 'WordPress', icon: SiWordpress, color: '#2dd4bf', desc: 'Sitios asequibles y fáciles de administrar.' },
+  { name: 'Tailwind', icon: FiLayout, color: '#06b6d4', desc: 'Diseños únicos y responsivos.' },
+  { name: 'Flutter', icon: FiSmartphone, color: '#2dd4bf', desc: 'Apps nativas para iOS y Android.' },
+  { name: 'AWS', icon: FiCloud, color: '#f59e0b', desc: 'Almacenamiento en la nube seguro y escalable.' },
 ]
 
 const FLOATING_ELEMENTS = [
@@ -215,62 +225,92 @@ function Hero() {
       <div className="gradient-orb w-[400px] h-[400px] bg-cyan-500/10 bottom-[20%] right-[-10%]" style={{ animation: 'float 12s ease-in-out infinite' }} />
       <div className="gradient-orb w-[300px] h-[300px] bg-emerald-500/10 top-[40%] left-[40%]" style={{ animation: 'pulse-glow 5s ease-in-out infinite' }} />
 
-      <div className="relative z-10 text-center px-6 max-w-4xl">
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
-        >
-          <span className="inline-flex items-center gap-2 px-4 py-1.5 mb-6 text-xs font-medium tracking-widest uppercase text-teal-300/90 aqua-border rounded-full crystal-glass">
-            <FiCode size={12} />
-            Desarrollo Web Profesional
-          </span>
-        </motion.div>
-
-        <motion.h1
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.15 }}
-          className="text-5xl sm:text-7xl md:text-8xl font-black tracking-tight leading-none mb-6"
-        >
-          <span className="aqua-gradient">maxwel.do</span>
-        </motion.h1>
-
-        <motion.p
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.3 }}
-          className="text-base sm:text-lg text-gray-400 max-w-2xl mx-auto mb-10 leading-relaxed"
-        >
-          Convierto ideas en <span className="text-white font-semibold">experiencias digitales</span> para empresas y emprendedores que buscan destacar en la web.
-        </motion.p>
-
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.45 }}
-          className="flex flex-wrap items-center justify-center gap-4"
-        >
-          <a
-            href="#projects"
-            className="group relative inline-flex items-center gap-2 px-8 py-3.5 text-white font-semibold rounded-xl aqua-border overflow-hidden"
+      <div className="relative z-10 w-full max-w-6xl mx-auto px-6">
+        <div className="grid md:grid-cols-2 gap-10 md:gap-16 items-center">
+          <motion.div
+            initial={{ opacity: 0, x: -40 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.8 }}
+            className="flex flex-col items-center md:items-start text-center md:text-left"
           >
-            <span className="absolute inset-0 bg-white/[0.03]" />
-            <span className="relative z-10 flex items-center gap-2">
-              Ver Proyectos <FiArrowRight size={16} className="group-hover:translate-x-1 transition-transform" />
+            <span className="inline-flex items-center gap-2 px-4 py-1.5 mb-6 text-xs font-medium tracking-widest uppercase text-teal-300/90 aqua-border rounded-full crystal-glass">
+              <FiCode size={12} />
+              Desarrollo Web Profesional
             </span>
-          </a>
-          <a
-            href="#contact"
-            className="inline-flex items-center gap-2 px-8 py-3.5 crystal-glass text-gray-300 hover:text-white border border-white/[0.08] hover:border-teal-400/30 rounded-xl transition-all duration-300"
+
+            <h1 className="text-5xl sm:text-7xl md:text-8xl font-black tracking-tight leading-none mb-6">
+              <span className="aqua-gradient">maxwel.do</span>
+            </h1>
+
+            <p className="text-base sm:text-lg text-gray-400 max-w-md leading-relaxed mb-8">
+              Convierto ideas en <span className="text-white font-semibold">experiencias digitales</span> para empresas y emprendedores que buscan destacar en la web.
+            </p>
+
+            <div className="flex flex-wrap gap-3 justify-center md:justify-start">
+              <a href="#projects" className="group relative inline-flex items-center gap-2 px-7 py-3.5 text-white font-semibold rounded-xl aqua-border overflow-hidden">
+                <span className="absolute inset-0 bg-white/[0.03]" />
+                <span className="relative z-10 flex items-center gap-2">
+                  Ver Proyectos <FiArrowRight size={15} className="group-hover:translate-x-1 transition-transform" />
+                </span>
+              </a>
+              <a href="#contact" className="inline-flex items-center gap-2 px-7 py-3.5 crystal-glass text-gray-300 hover:text-white border border-white/[0.08] hover:border-teal-400/30 rounded-xl transition-all duration-300">
+                Contactarme
+              </a>
+            </div>
+
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.5 }}
+              className="mt-10"
+            >
+              <p className="text-[10px] text-gray-600 tracking-widest uppercase mb-4 text-center md:text-left">Tecnologías que uso</p>
+              <div className="flex flex-wrap gap-3 justify-center md:justify-start">
+                {TECHS.map((tech) => {
+                  const Icon = tech.icon
+                  return (
+                    <div key={tech.name} className="group/tech relative">
+                      <div
+                        className="tech-dock-icon w-11 h-11 rounded-xl crystal-glass border border-white/[0.06] flex items-center justify-center cursor-default transition-all duration-200 hover:scale-[1.35] hover:z-10 hover:border-white/[0.15]"
+                        style={{ color: tech.color }}
+                      >
+                        <Icon size={20} />
+                      </div>
+                      <div className="absolute bottom-full left-1/2 -translate-x-1/2 mb-2 w-48 opacity-0 group-hover/tech:opacity-100 transition-all duration-300 pointer-events-none z-20 -translate-y-1 group-hover/tech:translate-y-0">
+                        <div className="crystal-glass border border-white/[0.08] rounded-xl p-3 text-center">
+                          <p className="text-xs font-semibold text-white mb-0.5">{tech.name}</p>
+                          <p className="text-[10px] text-gray-400 leading-relaxed">{tech.desc}</p>
+                        </div>
+                      </div>
+                    </div>
+                  )
+                })}
+              </div>
+            </motion.div>
+          </motion.div>
+
+          <motion.div
+            initial={{ opacity: 0, x: 40 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.8, delay: 0.2 }}
+            className="flex justify-center md:justify-end"
           >
-            Contactarme
-          </a>
-        </motion.div>
+            <div className="relative">
+              <div className="w-80 h-80 sm:w-96 sm:h-96 md:w-[28rem] md:h-[28rem] rounded-[40%_60%_40%_60%/50%_40%_60%_50%] aqua-border overflow-hidden animate-[morph_8s_ease-in-out_infinite]">
+                <div className="w-full h-full crystal-glass">
+                  <img src="/foto-maxwel.jpg" alt="Maxwel" className="w-full h-full object-cover object-top" />
+                </div>
+              </div>
+              <div className="absolute -bottom-2 left-1/2 -translate-x-1/2 bg-gradient-to-r from-teal-500 to-cyan-500 text-white text-xs font-bold px-4 py-1.5 rounded-full whitespace-nowrap shadow-lg shadow-cyan-500/20">
+                Disponible para proyectos
+              </div>
+            </div>
+          </motion.div>
+        </div>
       </div>
 
       <motion.a
-        href="#projects"
+        href="#about"
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ delay: 1.2 }}
@@ -574,7 +614,7 @@ function AboutMe() {
                 <img
                   src="/foto-maxwel.jpg"
                   alt="Maxwel"
-                  className="w-full h-full object-cover"
+                  className="w-full h-full object-cover object-top"
                 />
               </div>
             </div>
@@ -621,6 +661,80 @@ function AboutMe() {
               </div>
             </div>
           </motion.div>
+        </div>
+      </div>
+    </section>
+  )
+}
+
+const STEPS = [
+  { icon: FiMessageCircle, title: 'Descubrimiento', desc: 'Analizo tu negocio, competencia y objetivos para entender qué necesita tu proyecto.', color: 'text-teal-400' },
+  { icon: FiLayout, title: 'Diseño UI/UX', desc: 'Creo wireframes y prototipos del sitio, asegurando una experiencia intuitiva y atractiva.', color: 'text-cyan-400' },
+  { icon: FiCode, title: 'Desarrollo', desc: 'Codifico el sitio con tecnologías modernas (React, WordPress, Node.js) según lo acordado.', color: 'text-emerald-400' },
+  { icon: FiShield, title: 'Pruebas', desc: 'Reviso funcionalidad, rendimiento, seguridad y compatibilidad en todos los dispositivos.', color: 'text-teal-400' },
+  { icon: FiTrendingUp, title: 'Lanzamiento', desc: 'Despliego el sitio en producción, configuro dominio, hosting y optimizo para motores de búsqueda.', color: 'text-cyan-400' },
+  { icon: FiHeart, title: 'Soporte', desc: 'Te acompaño post-lanzamiento con mantenimiento, actualizaciones y mejoras continuas.', color: 'text-emerald-400' },
+]
+
+function Process() {
+  return (
+    <section id="process" className="relative py-28 px-6">
+      <div className="gradient-orb w-[500px] h-[500px] bg-teal-500/5 right-[-10%] bottom-0" style={{ animation: 'float 18s ease-in-out infinite' }} />
+
+      <div className="max-w-5xl mx-auto relative z-10">
+        <motion.div
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          viewport={{ once: true, margin: '-100px' }}
+          className="text-center mb-16"
+        >
+          <span className="inline-flex items-center gap-2 text-teal-400/80 text-xs font-medium tracking-[0.2em] uppercase">
+            <FiCode size={14} /> Proceso
+          </span>
+          <h2 className="text-3xl sm:text-4xl font-bold text-white mt-4">
+            Cómo <span className="aqua-gradient">trabajo</span>
+          </h2>
+          <p className="text-gray-500 mt-3 max-w-xl mx-auto text-sm leading-relaxed">
+            De la idea a la publicación, así es mi flujo de trabajo para cada proyecto.
+          </p>
+        </motion.div>
+
+        <div className="relative">
+          <div className="hidden md:block absolute left-1/2 -translate-x-px top-0 bottom-0 w-px bg-gradient-to-b from-teal-500/40 via-cyan-500/40 to-emerald-500/40" />
+
+          {STEPS.map((step, i) => {
+            const Icon = step.icon
+            const isLeft = i % 2 === 0
+            return (
+              <motion.div
+                key={step.title}
+                initial={{ opacity: 0, x: isLeft ? -30 : 30 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true, margin: '-50px' }}
+                transition={{ delay: i * 0.1 }}
+                className={`relative flex flex-col md:flex-row items-start gap-6 mb-10 md:mb-0 md:even:flex-row-reverse ${isLeft ? 'md:pr-[calc(50%+20px)]' : 'md:pl-[calc(50%+20px)]'}`}
+              >
+                <div className={`hidden md:flex absolute left-1/2 -translate-x-1/2 top-0 w-8 h-8 rounded-full crystal-glass border border-white/[0.08] items-center justify-center z-10 ${isLeft ? 'md:flex' : 'md:flex'}`}>
+                  <span className="text-[10px] font-bold text-teal-400">{i + 1}</span>
+                </div>
+
+                <div className="relative aqua-border rounded-xl overflow-hidden w-full md:w-auto flex-1">
+                  <div className="crystal-glass p-5 flex items-start gap-4">
+                    <div className="w-10 h-10 rounded-xl crystal-glass flex items-center justify-center border border-white/[0.06] shrink-0">
+                      <Icon size={18} className={step.color} />
+                    </div>
+                    <div className="min-w-0">
+                      <div className="flex items-center gap-2 mb-1">
+                        <span className="text-[10px] font-bold text-teal-500 md:hidden">0{i + 1}</span>
+                        <h3 className="text-sm font-bold text-white">{step.title}</h3>
+                      </div>
+                      <p className="text-xs text-gray-400 leading-relaxed">{step.desc}</p>
+                    </div>
+                  </div>
+                </div>
+              </motion.div>
+            )
+          })}
         </div>
       </div>
     </section>
@@ -931,6 +1045,7 @@ function App() {
         <Navbar />
         <Hero />
         <AboutMe />
+        <Process />
         <Pricing />
         <Projects />
         <Skills />
