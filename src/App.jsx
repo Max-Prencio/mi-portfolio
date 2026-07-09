@@ -11,6 +11,8 @@ import {
 } from 'react-icons/fi'
 import { SiWordpress, SiWhatsapp } from 'react-icons/si'
 
+const BASE = import.meta.env.BASE_URL || '/'
+
 const NAV_ITEMS = [
   { label: 'Inicio', href: '#hero', icon: FiUser },
   { label: 'Sobre mí', href: '#about', icon: FiUser },
@@ -25,7 +27,7 @@ const PROJECTS = [
   {
     title: 'Javaline',
     description: 'SaaS de gestión empresarial con 13 módulos: Facturación, CRM, RRHH, Compras, Agenda, Reuniones, Ventas Online, Tareas y Seguridad con perfiles.',
-    image: '/images/javaline.webp',
+    image: `${BASE}images/javaline.webp`,
     tags: ['React', 'Tailwind', 'React Router'],
     gradient: 'from-teal-500/10 to-cyan-500/10',
     iconColor: 'text-teal-400',
@@ -34,7 +36,7 @@ const PROJECTS = [
   {
     title: 'Uno Tax Service',
     description: 'Sitio web corporativo con WordPress para firma de impuestos y contabilidad. Panel administrable, formularios de contacto y diseño responsivo.',
-    image: '/images/unotax.webp',
+    image: `${BASE}images/unotax.webp`,
     tags: ['WordPress', 'Elementor', 'PHP'],
     gradient: 'from-cyan-500/10 to-emerald-500/10',
     iconColor: 'text-cyan-400',
@@ -298,7 +300,7 @@ function Hero() {
             <div className="relative">
               <div className="w-80 h-80 sm:w-96 sm:h-96 md:w-[28rem] md:h-[28rem] rounded-[40%_60%_40%_60%/50%_40%_60%_50%] aqua-border overflow-hidden animate-[morph_8s_ease-in-out_infinite]">
                 <div className="w-full h-full crystal-glass">
-                  <img src="/foto-maxwel.jpg" alt="Maxwel" className="w-full h-full object-cover object-top" />
+                  <img src={`${BASE}foto-maxwel.jpg`} alt="Maxwel" className="w-full h-full object-cover object-top" />
                 </div>
               </div>
               <div className="absolute -bottom-2 left-1/2 -translate-x-1/2 bg-gradient-to-r from-teal-500 to-cyan-500 text-white text-xs font-bold px-4 py-1.5 rounded-full whitespace-nowrap shadow-lg shadow-cyan-500/20">
@@ -612,7 +614,7 @@ function AboutMe() {
             <div className="relative aqua-border rounded-2xl overflow-hidden w-48 h-48 sm:w-56 sm:h-56 md:w-64 md:h-64">
               <div className="crystal-glass w-full h-full flex items-center justify-center">
                 <img
-                  src="/foto-maxwel.jpg"
+                  src={`${BASE}foto-maxwel.jpg`}
                   alt="Maxwel"
                   className="w-full h-full object-cover object-top"
                 />
