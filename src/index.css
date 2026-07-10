@@ -163,3 +163,32 @@ body {
   background: linear-gradient(135deg, rgba(45,212,191,0.15), rgba(6,182,212,0.08));
   box-shadow: 0 0 20px color-mix(in srgb, currentColor 25%, transparent);
 }
+
+.skip-link {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0,0,0,0);
+  white-space: nowrap;
+  border-width: 0;
+}
+
+.skip-link:focus {
+  position: fixed;
+  width: auto;
+  height: auto;
+  clip: auto;
+  overflow: visible;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
