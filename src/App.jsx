@@ -12,6 +12,8 @@ import {
 import { SiWordpress, SiWhatsapp } from 'react-icons/si'
 import { I18nProvider, useI18n } from './contexts/I18nContext'
 
+const BASE = import.meta.env.BASE_URL || '/'
+
 const SKILL_BARS = [
   { level: 90, barColor: '#2dd4bf' },
   { level: 85, barColor: '#06b6d4' },
@@ -35,19 +37,19 @@ const TECHS_COLORS = ['#2dd4bf', '#34d399', '#2dd4bf', '#06b6d4', '#2dd4bf', '#f
 
 const PROJECTS_DATA = [
   {
-    image: '/images/ross-agency.webp',
+    image: `${BASE}images/ross-agency.webp`,
     gradient: 'from-purple-500/10 to-pink-500/10',
     iconColor: 'text-purple-400',
     link: 'https://max-prencio.github.io/ross-agency/',
   },
   {
-    image: '/images/javaline.webp',
+    image: `${BASE}images/javaline.webp`,
     gradient: 'from-teal-500/10 to-cyan-500/10',
     iconColor: 'text-teal-400',
     link: '#',
   },
   {
-    image: '/images/unotax.webp',
+    image: `${BASE}images/unotax.webp`,
     gradient: 'from-cyan-500/10 to-emerald-500/10',
     iconColor: 'text-cyan-400',
     link: 'https://unotax.us/',
