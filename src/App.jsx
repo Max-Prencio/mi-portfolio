@@ -157,7 +157,7 @@ function Navbar() {
       role="navigation"
       aria-label={lang === 'es' ? 'Navegación principal' : 'Main navigation'}
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
-        scrolled ? 'crystal-glass border-b border-white/[0.06]' : 'bg-transparent'
+        scrolled ? 'bg-dark-900/80 backdrop-blur-xl border-b border-white/[0.06]' : 'bg-transparent'
       }`}
     >
       <div className="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
@@ -318,7 +318,7 @@ function Hero() {
             <div className="relative">
               <div className="w-80 h-80 sm:w-96 sm:h-96 md:w-[28rem] md:h-[28rem] rounded-[40%_60%_40%_60%/50%_40%_60%_50%] aqua-border overflow-hidden animate-[morph_8s_ease-in-out_infinite]">
                 <div className="w-full h-full crystal-glass">
-                  <img src="/foto-maxwel.jpg" alt="Maxwel Prencio - Desarrollador Web" className="w-full h-full object-cover object-top" />
+                  <img src={`${BASE}foto-maxwel.jpg`} alt="Maxwel Prencio - Desarrollador Web" className="w-full h-full object-cover object-top" />
                 </div>
               </div>
               <div className="absolute -bottom-2 left-1/2 -translate-x-1/2 bg-gradient-to-r from-teal-500 to-cyan-500 text-white text-xs font-bold px-4 py-1.5 rounded-full whitespace-nowrap shadow-lg shadow-cyan-500/20">
@@ -557,7 +557,7 @@ function AboutMe() {
           >
             <div className="relative aqua-border rounded-2xl overflow-hidden w-48 h-48 sm:w-56 sm:h-56 md:w-64 md:h-64">
               <div className="crystal-glass w-full h-full flex items-center justify-center">
-                <img src="/foto-maxwel.jpg" alt={lang === 'es' ? 'Maxwel Prencio - Desarrollador Web Freelance' : 'Maxwel Prencio - Freelance Web Developer'} className="w-full h-full object-cover object-top" />
+                <img src={`${BASE}foto-maxwel.jpg`} alt={lang === 'es' ? 'Maxwel Prencio - Desarrollador Web Freelance' : 'Maxwel Prencio - Freelance Web Developer'} className="w-full h-full object-cover object-top" />
               </div>
             </div>
           </motion.div>
